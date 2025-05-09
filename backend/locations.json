@@ -1,0 +1,218 @@
+{
+    "VietinBank": {
+        "node_id": "11185061821",
+        "lat": 21.0048867,
+        "lon": 105.845259,
+        "distance_to_graph_node_m": 5.49
+    },
+    "Cửa Hàng Linh Kiện 69": {
+        "node_id": "10126209638",
+        "lat": 21.0068771,
+        "lon": 105.8450627,
+        "distance_to_graph_node_m": 4.37
+    },
+    "Cà Phê Góc Phố": {
+        "node_id": "10126209649",
+        "lat": 21.0063325,
+        "lon": 105.8456847,
+        "distance_to_graph_node_m": 2.69
+    },
+    "In Tuân Hồng": {
+        "node_id": "10126209518",
+        "lat": 21.0039684,
+        "lon": 105.8453576,
+        "distance_to_graph_node_m": 2.9
+    },
+    "In Nhanh Pro": {
+        "node_id": "10126209517",
+        "lat": 21.0038896,
+        "lon": 105.8452517,
+        "distance_to_graph_node_m": 4.72
+    },
+    "Tượng đài Sinh viên lên đường bảo vệ Tổ quốc": {
+        "node_id": "11101880566",
+        "lat": 21.0062067,
+        "lon": 105.8426706,
+        "distance_to_graph_node_m": 18.25
+    },
+    "Đại học Bách Khoa": {
+        "node_id": "7190777926",
+        "lat": 21.0067276,
+        "lon": 105.8450354,
+        "distance_to_graph_node_m": 3.49
+    },
+    "Cổng Parabol Đại học Bách khoa (cột sau)": {
+        "node_id": "9813757890",
+        "lat": 21.0049501,
+        "lon": 105.8415719,
+        "distance_to_graph_node_m": 4.33
+    },
+    "BIDV": {
+        "node_id": "7702492920",
+        "lat": 21.0048855,
+        "lon": 105.8451784,
+        "distance_to_graph_node_m": 4.2
+    },
+    "Agribank": {
+        "node_id": "7702492920",
+        "lat": 21.0048868,
+        "lon": 105.8450904,
+        "distance_to_graph_node_m": 11.7
+    },
+    "Cổng Parabol Đại học Bách Khoa (cột trước)": {
+        "node_id": "10126209758",
+        "lat": 21.0045057,
+        "lon": 105.841557,
+        "distance_to_graph_node_m": 4.09
+    },
+    "Skyline Vmac": {
+        "node_id": "2499827530",
+        "lat": 21.0046205,
+        "lon": 105.8443358,
+        "distance_to_graph_node_m": 8.36
+    },
+    "TNGo - Số 55 Giải Phóng": {
+        "node_id": "11655843015",
+        "lat": 21.0037763,
+        "lon": 105.8415261,
+        "distance_to_graph_node_m": 2.96
+    },
+    "TNGo - Số 75 Trần Đại Nghĩa": {
+        "node_id": "10126209664",
+        "lat": 21.0053592,
+        "lon": 105.8457144,
+        "distance_to_graph_node_m": 5.54
+    },
+    "TNGo - Số 17 đường Giải Phóng": {
+        "node_id": "11182952757",
+        "lat": 21.0052614,
+        "lon": 105.8416051,
+        "distance_to_graph_node_m": 8.01
+    },
+    "Ban Đào tạo": {
+        "node_id": "7668352976",
+        "lat": 21.006965,
+        "lon": 105.8437262,
+        "distance_to_graph_node_m": 4.97
+    },
+    "Ban Công tác Sinh viên": {
+        "node_id": "1706569254",
+        "lat": 21.0069642,
+        "lon": 105.8438589,
+        "distance_to_graph_node_m": 11.21
+    },
+    "Khoa Giáo dục Quốc phòng & An ninh": {
+        "node_id": "7702492923",
+        "lat": 21.0047533,
+        "lon": 105.8447497,
+        "distance_to_graph_node_m": 7.1
+    },
+    "Khoa Lý luận Chính trị": {
+        "node_id": "11185061818",
+        "lat": 21.0047499,
+        "lon": 105.8449157,
+        "distance_to_graph_node_m": 9.36
+    },
+    "Trường Cơ khí": {
+        "node_id": "10997686310",
+        "lat": 21.0059102,
+        "lon": 105.8450371,
+        "distance_to_graph_node_m": 7.2
+    },
+    "Trường Điện - Điện tử": {
+        "node_id": "10997686314",
+        "lat": 21.0052658,
+        "lon": 105.8450313,
+        "distance_to_graph_node_m": 7.39
+    },
+    "Trường Hoá và Khoa học sự sống": {
+        "node_id": "5684339581",
+        "lat": 21.0061751,
+        "lon": 105.8438503,
+        "distance_to_graph_node_m": 8.33
+    },
+    "D8": {
+        "node_id": "1706569386",
+        "lat": 21.0039347,
+        "lon": 105.8425824,
+        "distance_to_graph_node_m": 25.08
+    },
+    "D3": {
+        "node_id": "11185061815",
+        "lat": 21.0047586,
+        "lon": 105.8450852,
+        "distance_to_graph_node_m": 12.67
+    },
+    "Khoa Vật lý kỹ thuật": {
+        "node_id": "8034817879",
+        "lat": 21.005444,
+        "lon": 105.8438493,
+        "distance_to_graph_node_m": 7.67
+    },
+    "Viện Kinh tế và Quản lý": {
+        "node_id": "7668532067",
+        "lat": 21.005815,
+        "lon": 105.8423645,
+        "distance_to_graph_node_m": 9.48
+    },
+    "Khoa Ngoại ngữ": {
+        "node_id": "11198039393",
+        "lat": 21.0056308,
+        "lon": 105.8450543,
+        "distance_to_graph_node_m": 6.63
+    },
+    "Khoa Khoa học và Công nghệ giáo dục": {
+        "node_id": "11198039456",
+        "lat": 21.0055624,
+        "lon": 105.844899,
+        "distance_to_graph_node_m": 8.08
+    },
+    "Nhà hàng Hải Yến Bách Khoa": {
+        "node_id": "7702476960",
+        "lat": 21.00487,
+        "lon": 105.8425222,
+        "distance_to_graph_node_m": 15.11
+    },
+    "MB": {
+        "node_id": "7702476976",
+        "lat": 21.0048593,
+        "lon": 105.8432706,
+        "distance_to_graph_node_m": 4.39
+    },
+    "Ban Tuyển sinh – Hướng nghiệp": {
+        "node_id": "11101880666",
+        "lat": 21.0069533,
+        "lon": 105.8441441,
+        "distance_to_graph_node_m": 13.15
+    },
+    "Đài phun nước Kim Tự Tháp": {
+        "node_id": "11655843007",
+        "lat": 21.0036829,
+        "lon": 105.8421448,
+        "distance_to_graph_node_m": 6.2
+    },
+    "Tượng thầy Nguyễn Sanh Dạn": {
+        "node_id": "11655807810",
+        "lat": 21.003726,
+        "lon": 105.8418743,
+        "distance_to_graph_node_m": 4.77
+    },
+    "Trung tâm Khảo thí ngoại ngữ và Trao đổi văn hóa": {
+        "node_id": "7190777927",
+        "lat": 21.0066156,
+        "lon": 105.8448554,
+        "distance_to_graph_node_m": 5.9
+    },
+    "Trung tâm Sáng tạo và Khởi nghiệp Sinh viên": {
+        "node_id": "7364293054",
+        "lat": 21.0047044,
+        "lon": 105.8432913,
+        "distance_to_graph_node_m": 13.43
+    },
+    "Thư viện Tạ Quang Bửu": {
+        "node_id": "11770725980",
+        "lat": 21.0043742,
+        "lon": 105.8443916,
+        "distance_to_graph_node_m": 14.56
+    }
+}

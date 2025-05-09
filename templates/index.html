@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Route - HUST</title>
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* CSS đã được nhúng vào trong tệp HTML */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #map {
+      
+      width: 100%;
+      height: 100vh; /* Bạn có thể thay đổi chiều cao này tùy ý */
+    }
+
+    .controls {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background-color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .controls input {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .controls button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <div class="controls">
+    <input type="text" id="start" placeholder="Nhập địa điểm xuất phát">
+    <input type="text" id="end" placeholder="Nhập địa điểm đích">
+    <button id="findRoute">Tìm đường</button>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      var map = L.map('map').setView([21.0055, 105.8414], 15);  // Đúng tọa độ Bách Khoa HN
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Lắng nghe sự kiện click nút Tìm đường
+        $('#findRoute').click(function() {
+            var startLocation = $('#start').val();
+            var endLocation = $('#end').val();
+
+            // Lấy tọa độ từ các địa điểm đã nhập
+            $.get('/find_route', { start: startLocation, end: endLocation }, function(data) {
+                if (data.route) {
+                    var latLngs = data.route.map(function(node) {
+                        return [node[1], node[0]]; // Chuyển đổi (long, lat) thành (lat, long)
+                    });
+
+                    L.polyline(latLngs, { color: 'blue' }).addTo(map);
+                } 
+            });
+        });
+    });
+  </script>
+</body>
+</html>

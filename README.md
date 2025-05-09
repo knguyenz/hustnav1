@@ -1,1 +1,1 @@
-# hustnav1
+# hustnav
