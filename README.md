@@ -68,13 +68,13 @@ Go to the /map.html tab to view the route to the nearest parking lot.
 In app.py, make sure to replace all hardcoded file paths (such as for .osm, .json, .html) with the correct paths on your local machine. You can find the exact locations using File Explorer.
 
 ## Test case 
-![UI](pdf\img1.png)
+![pdf](pdf\img1.png)
 
 ### Finding the shortest path between 2 locations
-![UI](pdf\img2.png)
+![pdf](pdf\img2.png)
 
 ### Finding the nearest parking lot
-![UI](pdf\img3.png)
+![pdf](pdf\img3.png)
 
 
 ## Authors
