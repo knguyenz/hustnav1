@@ -61,36 +61,150 @@
   <div id="map"></div>
   
   <div class="controls">
-    <input type="text" id="start" placeholder="Nhập địa điểm xuất phát">
-    <input type="text" id="end" placeholder="Nhập địa điểm đích">
+    <label for="start">Địa điểm xuất phát:</label>
+    <input type="text" id="start" placeholder="Nhập hoặc chọn địa điểm...">
+    <label for="end">Địa điểm đích:</label>
+    <input type="text" id="end" placeholder="Nhập hoặc chọn địa điểm...">
     <button id="findRoute">Tìm đường</button>
-  </div>
+
+    <hr style="margin: 15px 0;"> <label for="currentLocationForParking">Vị trí hiện tại của bạn:</label>
+    <input type="text" id="currentLocationForParking" placeholder="Nhập hoặc chọn vị trí...">
+    <button id="findNearestParking">Tìm nhà xe gần nhất</button>
+
+    <div id="routeInfo" class="info-box" style="display:none; margin-top: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 3px;">
+        </div>
+</div>
 
   <script>
     $(document).ready(function() {
-      var map = L.map('map').setView([21.0055, 105.8414], 15);  // Đúng tọa độ Bách Khoa HN
+    // Biến toàn cục để lưu trữ các layer và bản đồ
+    var map = L.map('map').setView([21.0055, 105.8414], 16); // Tọa độ trung tâm HUST, zoom level 16
+    var currentRouteLayer = null;
+    var currentStartMarker = null;
+    var currentEndMarker = null;
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-        // Lắng nghe sự kiện click nút Tìm đường
-        $('#findRoute').click(function() {
-            var startLocation = $('#start').val();
-            var endLocation = $('#end').val();
+    // Hàm để xóa các đối tượng route và marker cũ trên bản đồ
+    function clearMapLayers() {
+        if (currentRouteLayer) {
+            map.removeLayer(currentRouteLayer);
+            currentRouteLayer = null;
+        }
+        if (currentStartMarker) {
+            map.removeLayer(currentStartMarker);
+            currentStartMarker = null;
+        }
+        if (currentEndMarker) {
+            map.removeLayer(currentEndMarker);
+            currentEndMarker = null;
+        }
+        $('#routeInfo').hide().html(''); // Ẩn và xóa thông tin lộ trình cũ
+    }
 
-            // Lấy tọa độ từ các địa điểm đã nhập
-            $.get('/find_route', { start: startLocation, end: endLocation }, function(data) {
-                if (data.route) {
-                    var latLngs = data.route.map(function(node) {
-                        return [node[1], node[0]]; // Chuyển đổi (long, lat) thành (lat, long)
-                    });
+    // Cập nhật sự kiện click nút "Tìm đường" (#findRoute)
+    $('#findRoute').click(function() {
+        var startLocationName = $('#start').val();
+        var endLocationName = $('#end').val();
 
-                    L.polyline(latLngs, { color: 'blue' }).addTo(map);
-                } 
-            });
+        if (!startLocationName || !endLocationName) {
+            alert("Vui lòng nhập cả địa điểm xuất phát và địa điểm đích!");
+            return;
+        }
+        clearMapLayers(); // Xóa route và marker cũ
+
+        $.get('/find_route', { start: startLocationName, end: endLocationName }, function(data) {
+            if (data.error) {
+                alert(data.error);
+                $('#routeInfo').html('<b>Lỗi:</b> ' + data.error).show();
+                return;
+            }
+            if (data.nodes_on_path && data.nodes_on_path.length > 0) {
+                var latLngs = data.nodes_on_path.map(function(coord) {
+                    // Giả sử backend trả về tọa độ là [lat, lon]
+                    return [coord[0], coord[1]];
+                });
+
+                currentRouteLayer = L.polyline(latLngs, { color: 'blue', weight: 5 }).addTo(map);
+                map.fitBounds(currentRouteLayer.getBounds()); // Tự động zoom để thấy toàn bộ route
+
+                // Thêm marker cho điểm bắt đầu
+                currentStartMarker = L.marker(latLngs[0], { title: "Xuất phát: " + data.start_location_name })
+                    .addTo(map)
+                    .bindPopup("<b>Xuất phát:</b><br>" + data.start_location_name)
+                    .openPopup();
+
+                // Thêm marker cho điểm kết thúc
+                currentEndMarker = L.marker(latLngs[latLngs.length - 1], { title: "Đích: " + data.end_location_name })
+                    .addTo(map)
+                    .bindPopup("<b>Đích:</b><br>" + data.end_location_name + "<br>Khoảng cách: " + data.distance.toFixed(0) + "m");
+
+                // Hiển thị thông tin
+                $('#routeInfo').html('<b>Đường đi:</b> ' + data.start_location_name + ' → ' + data.end_location_name +
+                                   '<br><b>Khoảng cách:</b> ' + data.distance.toFixed(0) + ' m').show();
+            } 
         });
     });
-  </script>
+
+    // Thêm sự kiện click nút "Tìm nhà xe gần nhất" (#findNearestParking)
+    $('#findNearestParking').click(function() {
+        var currentLocationName = $('#currentLocationForParking').val();
+        if (!currentLocationName) {
+            alert("Vui lòng nhập vị trí hiện tại của bạn!");
+            return;
+        }
+        clearMapLayers(); // Xóa route và marker cũ
+
+        $.get('/find_nearest_parking', { start: currentLocationName }, function(data) {
+            if (data.error) {
+                alert(data.error);
+                 $('#routeInfo').html('<b>Lỗi:</b> ' + data.error).show();
+                return;
+            }
+            if (data.nodes_on_path && data.nodes_on_path.length > 0) {
+                var latLngs = data.nodes_on_path.map(function(coord) {
+                    // Giả sử backend trả về tọa độ là [lat, lon]
+                    return [coord[0], coord[1]];
+                });
+
+                currentRouteLayer = L.polyline(latLngs, { color: 'green', weight: 5 }).addTo(map); // Màu xanh cho route nhà xe
+                map.fitBounds(currentRouteLayer.getBounds());
+
+                // Thêm marker cho vị trí hiện tại
+                currentStartMarker = L.marker(latLngs[0], { title: "Vị trí của bạn: " + data.start_location_name })
+                    .addTo(map)
+                    .bindPopup("<b>Vị trí của bạn:</b><br>" + data.start_location_name)
+                    .openPopup();
+                
+                // Thêm marker cho nhà xe gần nhất
+                currentEndMarker = L.marker(latLngs[latLngs.length-1], { title: "Nhà xe gần nhất: " + data.parking_name })
+                    .addTo(map)
+                    .bindPopup("<b>Nhà xe gần nhất:</b><br>" + data.parking_name + "<br>Khoảng cách: " + data.distance.toFixed(0) + "m");
+
+                // Hiển thị thông tin
+                $('#routeInfo').html('<b>Nhà xe gần nhất:</b> ' + data.parking_name +
+                                   '<br><b>Vị trí của bạn:</b> ' + data.start_location_name +
+                                   '<br><b>Khoảng cách:</b> ' + data.distance.toFixed(0) + ' m').show();
+            } 
+        });
+    });
+
+    // (Tùy chọn) Thêm code để điền danh sách địa điểm vào các ô input/select
+    // Ví dụ: gọi API /get_locations để lấy danh sách rồi dùng jQuery autocomplete hoặc <datalist>
+    // $.get('/get_locations', function(locationNames) {
+    //     $("#start, #end, #currentLocationForParking").each(function() {
+    //         var datalistId = $(this).attr('id') + '-list';
+    //         $(this).attr('list', datalistId);
+    //         var datalist = $('<datalist>').attr('id', datalistId).insertAfter($(this));
+    //         locationNames.forEach(function(name) {
+    //             datalist.append($('<option>').attr('value', name));
+    //         });
+    //     });
+    // });
+
+});
+ </script>
 </body>
 </html>

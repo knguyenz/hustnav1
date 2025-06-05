@@ -1,35 +1,6 @@
 {
-    "VietinBank": {
-        "node_id": "11185061821",
-        "lat": 21.0048867,
-        "lon": 105.845259,
-        "distance_to_graph_node_m": 5.49
-    },
-    "Cửa Hàng Linh Kiện 69": {
-        "node_id": "10126209638",
-        "lat": 21.0068771,
-        "lon": 105.8450627,
-        "distance_to_graph_node_m": 4.37
-    },
-    "Cà Phê Góc Phố": {
-        "node_id": "10126209649",
-        "lat": 21.0063325,
-        "lon": 105.8456847,
-        "distance_to_graph_node_m": 2.69
-    },
-    "In Tuân Hồng": {
-        "node_id": "10126209518",
-        "lat": 21.0039684,
-        "lon": 105.8453576,
-        "distance_to_graph_node_m": 2.9
-    },
-    "In Nhanh Pro": {
-        "node_id": "10126209517",
-        "lat": 21.0038896,
-        "lon": 105.8452517,
-        "distance_to_graph_node_m": 4.72
-    },
-    "Tượng đài Sinh viên lên đường bảo vệ Tổ quốc": {
+    
+    "C2": {
         "node_id": "11101880566",
         "lat": 21.0062067,
         "lon": 105.8426706,
@@ -41,31 +12,15 @@
         "lon": 105.8450354,
         "distance_to_graph_node_m": 3.49
     },
-    "Cổng Parabol Đại học Bách khoa (cột sau)": {
+    "Cổng Parabol Đại học Bách khoa ": {
         "node_id": "9813757890",
         "lat": 21.0049501,
         "lon": 105.8415719,
         "distance_to_graph_node_m": 4.33
     },
-    "BIDV": {
-        "node_id": "7702492920",
-        "lat": 21.0048855,
-        "lon": 105.8451784,
-        "distance_to_graph_node_m": 4.2
-    },
-    "Agribank": {
-        "node_id": "7702492920",
-        "lat": 21.0048868,
-        "lon": 105.8450904,
-        "distance_to_graph_node_m": 11.7
-    },
-    "Cổng Parabol Đại học Bách Khoa (cột trước)": {
-        "node_id": "10126209758",
-        "lat": 21.0045057,
-        "lon": 105.841557,
-        "distance_to_graph_node_m": 4.09
-    },
-    "Skyline Vmac": {
+    
+    
+    "Thư viện Tạ Quang Bửu": {
         "node_id": "2499827530",
         "lat": 21.0046205,
         "lon": 105.8443358,
@@ -76,24 +31,6 @@
         "lat": 21.0037763,
         "lon": 105.8415261,
         "distance_to_graph_node_m": 2.96
-    },
-    "TNGo - Số 75 Trần Đại Nghĩa": {
-        "node_id": "10126209664",
-        "lat": 21.0053592,
-        "lon": 105.8457144,
-        "distance_to_graph_node_m": 5.54
-    },
-    "TNGo - Số 17 đường Giải Phóng": {
-        "node_id": "11182952757",
-        "lat": 21.0052614,
-        "lon": 105.8416051,
-        "distance_to_graph_node_m": 8.01
-    },
-    "Ban Đào tạo": {
-        "node_id": "7668352976",
-        "lat": 21.006965,
-        "lon": 105.8437262,
-        "distance_to_graph_node_m": 4.97
     },
     "Ban Công tác Sinh viên": {
         "node_id": "1706569254",
@@ -119,7 +56,7 @@
         "lon": 105.8450371,
         "distance_to_graph_node_m": 7.2
     },
-    "Trường Điện - Điện tử": {
+    "C7": {
         "node_id": "10997686314",
         "lat": 21.0052658,
         "lon": 105.8450313,
@@ -143,13 +80,13 @@
         "lon": 105.8450852,
         "distance_to_graph_node_m": 12.67
     },
-    "Khoa Vật lý kỹ thuật": {
+    "C10": {
         "node_id": "8034817879",
         "lat": 21.005444,
         "lon": 105.8438493,
         "distance_to_graph_node_m": 7.67
     },
-    "Viện Kinh tế và Quản lý": {
+    "C9": {
         "node_id": "7668532067",
         "lat": 21.005815,
         "lon": 105.8423645,
@@ -179,7 +116,7 @@
         "lon": 105.8432706,
         "distance_to_graph_node_m": 4.39
     },
-    "Ban Tuyển sinh – Hướng nghiệp": {
+    "Ban Tuyển sinh và Hướng nghiệp": {
         "node_id": "11101880666",
         "lat": 21.0069533,
         "lon": 105.8441441,
@@ -209,10 +146,50 @@
         "lon": 105.8432913,
         "distance_to_graph_node_m": 13.43
     },
-    "Thư viện Tạ Quang Bửu": {
-        "node_id": "11770725980",
-        "lat": 21.0043742,
-        "lon": 105.8443916,
+    
+    "C1": {
+        "node_id": "11180381376",
+        "lat": 21.0070842,
+        "lon": 105.843221,
         "distance_to_graph_node_m": 14.56
+    },
+    "C4": {
+        "node_id": "7668359997",
+        "lat": 21.006112,
+        "lon": 105.8437736,
+        "distance_to_graph_node_m": 14.56
+    },
+    "Nhà xe C5": {
+        "node_id": "8034817877",
+        "lat": 21.0060752,
+        "lon": 105.8445764,
+        "distance_to_graph_node_m": 14.56,
+        "type": "parking"
+    },
+    "Nhà xe D3": {
+        "node_id": "10126209719",
+        "lat": 21.0048835,
+        "lon": 105.8454422,
+        "type": "parking"
+    },
+    "Nhà xe D8": {
+        "node_id": "8016235103",
+        "lat": 21.0047093,
+        "lon": 105.8424002,
+        "type": "parking"
+    },
+    "Nhà xe D7": {
+        "node_id": "10126205546",
+        "lat": 21.0040587,
+        "lon": 105.8444597,
+        "type": "parking"
+    },
+
+    "Nhà xe C7": {
+        "node_id": "11198039562",
+        "lat": 21.005173,
+        "lon": 105.8448494,
+        "type": "parking"
     }
 }
+

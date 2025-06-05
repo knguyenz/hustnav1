@@ -55,7 +55,7 @@ class Graph:
 # Hàm test nằm ngoài class Graph
 def test_output():
     graph = Graph()
-    graph.parse_osm("data/hust.osm")  # Cập nhật đúng đường dẫn file OSM của bạn
+    graph.parse_osm(r"D:\hustnav1\backend\data\hust.osm")  # Cập nhật đúng đường dẫn file OSM của bạn
 
     nodes, edges = graph.get_graph()
 

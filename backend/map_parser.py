@@ -76,8 +76,8 @@ def test_output():
         if i == 4:
             break
              # Kiểm tra số lượng cạnh giữa hai node cụ thể
-    node1 = "11185083441"
-    node2 = "11185061836"
+    node1 = "1494034258"
+    node2 = "10126205567"
     edges_count = graph.debug_edges_for_two_nodes(node1, node2)
     print(f"Số lượng cạnh giữa {node1} và {node2}: {edges_count}")
 
